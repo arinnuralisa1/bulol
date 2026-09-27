@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVEON QUEEN 3000™ - Ultra Savage Edition 💅✨</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800;900&family=Plus+Jakarta+Sans:wght@500;700;800&family=Bungee&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Canvas Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'queen-pink': '#FF2A85',
+                        'queen-purple': '#9D4EDD',
+                        'queen-yellow': '#FFE600',
+                        'queen-cyan': '#00F0FF',
+                        'queen-green': '#00E676',
+                        'queen-red': '#FF3366',
+                        'queen-peach': '#FF99C8',
+                        'queen-dark': '#12121C',
+                        'queen-card': '#FFFFFF'
+                    },
+                    fontFamily: {
+                        bungee: ['Bungee', 'cursive'],
+                        space: ['Space Grotesk', 'sans-serif'],
+                        fredoka: ['Fredoka', 'sans-serif'],
+                        body: ['Plus Jakarta Sans', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'neo': '6px 6px 0px 0px #12121C',
+                        'neo-lg': '9px 9px 0px 0px #12121C',
+                        'neo-sm': '3px 3px 0px 0px #12121C',
+                        'neo-pink': '6px 6px 0px 0px #FF2A85',
+                        'neo-yellow': '6px 6px 0px 0px #FFE600'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #FFF0F6;
+            background-image: radial-gradient(#12121C 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .dark body {
+            background-color: #0F0F1A;
+            background-image: radial-gradient(#FF2A85 1.5px, transparent 1.5px);
+            color: #F8FAFC;
+        }
+
+        .heading-bungee { font-family: 'Bungee', cursive; }
+        .font-space { font-family: 'Space Grotesk', sans-serif; }
+        .font-fredoka { font-family: 'Fredoka', sans-serif; }
+
+        .neo-box {
+            background-color: #FFFFFF;
+            border: 3.5px solid #12121C;
+            box-shadow: 6px 6px 0px 0px #12121C;
+            border-radius: 1.25rem;
+            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .dark .neo-box {
+            background-color: #1A1A2E;
+            border-color: #FF2A85;
+            box-shadow: 6px 6px 0px 0px #FF2A85;
+        }
+
+        .neo-box:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 9px 9px 0px 0px #12121C;
+        }
+
+        .dark .neo-box:hover {
+            box-shadow: 9px 9px 0px 0px #FF2A85;
+        }
+
+        .neo-btn {
+            border: 3px solid #12121C;
+            box-shadow: 4px 4px 0px 0px #12121C;
+            border-radius: 0.85rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 800;
+            transition: all 0.15s ease;
+            user-select: none;
+        }
+
+        .dark .neo-btn {
+            border-color: #00F0FF;
+            box-shadow: 4px 4px 0px 0px #00F0FF;
+        }
+
+        .neo-btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #12121C;
+        }
+
+        .dark .neo-btn:hover {
+            box-shadow: 6px 6px 0px 0px #00F0FF;
+        }
+
+        .neo-btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px 0px #12121C;
+        }
+
+        /* 3D Tarot Card Flip Effect */
+        .perspective-1000 { perspective: 1000px; }
+        .transform-style-3d { transform-style: preserve-3d; }
+        .backface-hidden { backface-visibility: hidden; }
+        .rotate-y-180 { transform: rotateY(180deg); }
+
+        .roast-shake {
+            animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+        }
+
+        @keyframes shake {
+            10%, 90% { transform: translate3d(-2px, 0, 0) rotate(-1deg); }
+            20%, 80% { transform: translate3d(3px, 0, 0) rotate(2deg); }
+            30%, 50%, 70% { transform: translate3d(-5px, 0, 0) rotate(-3deg); }
+            40%, 60% { transform: translate3d(5px, 0, 0) rotate(3deg); }
+        }
+
+        .floating-emoji {
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            animation: floatUp 2s ease-out forwards;
+        }
+
+        @keyframes floatUp {
+            0% { opacity: 1; transform: translateY(0) scale(1) rotate(0deg); }
+            100% { opacity: 0; transform: translateY(-150px) scale(1.5) rotate(20deg); }
+        }
+
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #FF99C8; border-left: 3px solid #12121C; }
+        ::-webkit-scrollbar-thumb { background: #FF2A85; border-radius: 8px; border: 2px solid #12121C; }
+    </style>
+</head>
+
+<body class="text-queen-dark min-h-screen pb-24 selection:bg-queen-pink selection:text-white dark:text-slate-100">
+
+    <!-- Toast Notification Banner -->
+    <div id="toast-container" class="fixed top-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+    <!-- Modal Target Setup -->
+    <div id="target-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-queen-dark/85 backdrop-blur-md transition-all duration-300">
+        <div class="neo-box bg-white dark:bg-slate-900 max-w-xl w-full p-6 md:p-8 space-y-5 relative">
+            
+            <div class="flex items-center justify-between border-b-4 border-queen-dark dark:border-queen-pink pb-4">
+                <div class="flex items-center gap-3">
+                    <span class="w-12 h-12 bg-queen-pink text-white text-2xl font-black rounded-2xl flex items-center justify-center border-3 border-queen-dark shadow-neo-sm -rotate-6">
+                        👑
+                    </span>
+                    <div>
+                        <h2 class="heading-bungee text-xl md:text-2xl text-queen-dark dark:text-white tracking-wide">
+                            SETUP QUEEN SINGLE
+                        </h2>
+                        <p class="text-xs font-bold text-slate-600 dark:text-slate-400 font-space">Siapa cewek hebat yang baru resmi bebas dari cowok red flag?</p>
+                    </div>
+                </div>
+            </div>
+
+            <form onsubmit="submitTargetSetup(event)" class="space-y-4 font-space">
+                <div>
+                    <label class="block text-xs font-black uppercase text-queen-dark dark:text-slate-200 mb-1">Nama Panggilan Queen:</label>
+                    <input type="text" id="modal-name-input" placeholder="Contoh: Amanda, Clarissa, Syafa, Putri, Bella..." required
+                        class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border-3 border-queen-dark dark:border-queen-pink rounded-xl font-extrabold text-base text-queen-pink focus:outline-none focus:ring-4 focus:ring-queen-yellow">
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div>
+                        <label class="block text-xs font-black uppercase text-queen-dark dark:text-slate-200 mb-1">Tipe Cowok Mantannya:</label>
+                        <select id="modal-ex-type-input" class="w-full px-3 py-3 bg-slate-50 dark:bg-slate-800 border-3 border-queen-dark dark:border-queen-pink rounded-xl font-bold text-xs md:text-sm text-queen-dark dark:text-white">
+                            <option value="Mas-Mas Red Flag Walkin'">Mas-Mas Red Flag Walkin' 🚩</option>
+                            <option value="Softboy Playing Victim">Softboy Playing Victim 🥺</option>
+                            <option value="Cowok Jamet Matre">Cowok Jamet Matre / Pelit 💸</option>
+                            <option value="Suhu Hobi Ghosting">Suhu Hobi Ghosting 👻</option>
+                            <option value="Gamer 24/7 Cuek Parah">Gamer 24/7 Cuek Parah 🎮</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-black uppercase text-queen-dark dark:text-slate-200 mb-1">Durasi Bertahan Sama Beban:</label>
+                        <select id="modal-duration-input" class="w-full px-3 py-3 bg-slate-50 dark:bg-slate-800 border-3 border-queen-dark dark:border-queen-pink rounded-xl font-bold text-xs md:text-sm text-queen-dark dark:text-white">
+                            <option value="3">3 Bulan (Untung Cepat Sadar)</option>
+                            <option value="12" selected>1 Tahun (Banyak Makan Hati)</option>
+                            <option value="36">3 Tahun (Rugi Skincare & Waktu)</option>
+                            <option value="60">5+ Tahun (Hampir Rugi 7 Turunan)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-black uppercase text-queen-dark dark:text-slate-200 mb-1">Alasan Utama Putus / Ketahuan:</label>
+                    <select id="modal-reason-input" class="w-full px-4 py-3 bg-slate-50 dark:bg-slate-800 border-3 border-queen-dark dark:border-queen-pink rounded-xl font-bold text-xs md:text-sm text-queen-dark dark:text-white">
+                        <option value="selingkuh">Ketahuan Chat Sama Cewek Lain / Second Account 📱</option>
+                        <option value="kamu_baik">"Kamu Terlalu Baik Buat Aku" (Alasan Basi) 🤡</option>
+                        <option value="fokus_karir">"Pengen Fokus Kuliah / Karir Dulu" (Prett!) 💼</option>
+                        <option value="ghosting">Di-Ghosting Tanpa Kepastian Pas Lagi Sayang 👻</option>
+                        <option value="ojek">Baru Sadar Cuma Dijadiin Ojek & Supir Gratisan 🛵</option>
+                    </select>
+                </div>
+
+                <!-- Avatar Selection Presets -->
+                <div>
+                    <label class="block text-xs font-black uppercase text-queen-dark dark:text-slate-200 mb-2">Pilih Mood Crown / Avatar Queen:</label>
+                    <div class="flex items-center justify-between gap-2" id="avatar-selector">
+                        <button type="button" onclick="selectAvatar('👑', event)" class="avatar-option p-3 bg-queen-yellow/30 border-3 border-queen-dark rounded-xl text-2xl hover:scale-110 transition ring-4 ring-queen-pink">👑</button>
+                        <button type="button" onclick="selectAvatar('💃', event)" class="avatar-option p-3 bg-queen-pink/30 border-3 border-queen-dark rounded-xl text-2xl hover:scale-110 transition">💃</button>
+                        <button type="button" onclick="selectAvatar('👸', event)" class="avatar-option p-3 bg-queen-purple/30 border-3 border-queen-dark rounded-xl text-2xl hover:scale-110 transition">👸</button>
+                        <button type="button" onclick="selectAvatar('💅', event)" class="avatar-option p-3 bg-queen-cyan/30 border-3 border-queen-dark rounded-xl text-2xl hover:scale-110 transition">💅</button>
+                        <button type="button" onclick="selectAvatar('✨', event)" class="avatar-option p-3 bg-queen-green/30 border-3 border-queen-dark rounded-xl text-2xl hover:scale-110 transition">✨</button>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full neo-btn bg-queen-yellow hover:bg-yellow-300 text-queen-dark py-4 text-base md:text-lg flex items-center justify-center gap-2 mt-4">
+                    <span>🚀 RAYAKAN KEBESASAN QUEEN SEKARANG!</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b-4 border-queen-dark dark:border-queen-pink shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center space-x-3">
+                <div class="w-11 h-11 bg-queen-pink text-white rounded-2xl flex items-center justify-center font-black text-2xl border-3 border-queen-dark shadow-neo-sm -rotate-6">
+                    ✨
+                </div>
+                <div>
+                    <h1 class="heading-bungee text-lg md:text-2xl text-queen-dark dark:text-white tracking-wider flex items-center gap-2">
+                        MOVEON QUEEN <span class="text-[10px] md:text-xs px-2.5 py-0.5 bg-queen-yellow text-queen-dark rounded-full font-space font-extrabold border-2 border-queen-dark uppercase">Ultra 3000</span>
+                    </h1>
+                    <p class="text-xs font-bold text-slate-500 dark:text-slate-400 font-space hidden sm:block">Pusat Syukuran Kemerdekaan Mbak-Mbak Bebas Red Flag</p>
+                </div>
+            </div>
+
+            <!-- Header Action Controls -->
+            <div class="flex items-center gap-2">
+                <button onclick="toggleDarkMode()" class="neo-btn bg-slate-200 dark:bg-slate-700 text-queen-dark dark:text-white p-2 text-xs hover:bg-slate-300">
+                    <i class="fa-solid fa-moon dark:hidden"></i>
+                    <i class="fa-solid fa-sun hidden dark:inline text-queen-yellow"></i>
+                </button>
+                <div class="flex items-center gap-2 bg-queen-yellow px-3 py-1.5 rounded-2xl border-3 border-queen-dark shadow-neo-sm">
+                    <span id="target-avatar-badge" class="text-xl">👑</span>
+                    <div class="leading-tight">
+                        <span class="text-[9px] font-black uppercase text-slate-700 block">Queen Single:</span>
+                        <span id="header-target-name" class="font-space font-black text-xs md:text-sm text-queen-pink">AMANDA</span>
+                    </div>
+                </div>
+                <button onclick="openModal()" class="neo-btn bg-queen-purple text-white px-3 py-2 text-xs hover:bg-purple-700 flex items-center gap-1">
+                    <i class="fa-solid fa-user-pen"></i>
+                    <span class="hidden md:inline">Ganti Queen</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 pt-8 space-y-10">
+
+        <section class="neo-box p-6 md:p-8 bg-white dark:bg-slate-900 relative overflow-hidden">
+            <div class="absolute -right-8 -bottom-8 opacity-10 text-queen-dark dark:text-white pointer-events-none text-9xl font-black heading-bungee">
+                QUEEN
+            </div>
+
+            <div class="relative z-10 space-y-5 max-w-4xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 bg-queen-pink text-white rounded-xl font-space font-black text-xs uppercase border-2 border-queen-dark shadow-neo-sm">
+                    🎉 DECLARATION OF FREEDOM
+                </div>
+
+                <h2 class="heading-bungee text-2xl md:text-4xl text-queen-dark dark:text-white leading-snug">
+                    CONGRATS <span id="hero-target-name" class="text-queen-pink underline decoration-wavy decoration-queen-yellow">AMANDA</span>! KAMU 100% BEBAS DARI COWOK RED FLAG! 💅✨
+                </h2>
+
+                <!-- Main Speech Bubble Box -->
+                <div id="main-roast-box" class="bg-queen-yellow/30 dark:bg-queen-purple/20 border-3 border-queen-dark dark:border-queen-pink rounded-2xl p-5 relative space-y-3 shadow-neo-sm">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2 text-queen-pink font-space font-black text-xs uppercase tracking-wider">
+                            <i class="fa-solid fa-crown"></i> Tamparan Realita Utama Hari Ini:
+                        </div>
+                        <button onclick="speakCurrentRoast()" class="text-xs font-black bg-white dark:bg-slate-800 px-2.5 py-1 rounded-lg border-2 border-queen-dark dark:border-queen-pink hover:bg-slate-100 flex items-center gap-1">
+                            <i class="fa-solid fa-volume-high text-queen-purple"></i> Baca Suara
+                        </button>
+                    </div>
+                    <p id="main-roast-text" class="font-space text-base md:text-xl font-extrabold text-queen-dark dark:text-white italic leading-relaxed">
+                        "Akhirnya Amanda sadar! Cowok yang dulu dipuja-puja ternyata cuma mas-mas red flag dengan modal janji manis & helm bogo lecet. Selamat kembali ke era Glowing tanpa beban!"
+                    </p>
+                </div>
+
+                <p class="text-slate-700 dark:text-slate-300 text-sm md:text-base font-bold leading-relaxed font-space">
+                    Setelah sekian lama ngabisin modal skincare cuma buat nangisin cowok beban, akhirnya kawan kita <strong id="hero-body-target" class="text-queen-pink">Amanda</strong> resmi lepas dari cengkraman bucin dan siap menyandang gelar <i class="text-queen-purple font-black">Independent Glowing Queen 3000</i>!
+                </p>
+
+                <!-- Audio Soundboard Trigger Buttons -->
+                <div class="pt-2 flex flex-wrap gap-3">
+                    <button onclick="playAudioSynth('cheer')" class="neo-btn bg-queen-yellow text-queen-dark px-4 py-2.5 text-xs md:text-sm flex items-center gap-2">
+                        <span>👏 Sorakan Bestie</span>
+                    </button>
+                    <button onclick="playAudioSynth('cash')" class="neo-btn bg-queen-green text-queen-dark px-4 py-2.5 text-xs md:text-sm flex items-center gap-2">
+                        <span>💰 Sound Cuan Hemat</span>
+                    </button>
+                    <button onclick="playAudioSynth('alarm')" class="neo-btn bg-queen-pink text-white px-4 py-2.5 text-xs md:text-sm flex items-center gap-2">
+                        <span>🚨 RED FLAG ALARM!</span>
+                    </button>
+                    <button onclick="popConfettiParty()" class="neo-btn bg-queen-cyan text-queen-dark px-4 py-2.5 text-xs md:text-sm flex items-center gap-2">
+                        <span>🎉 Pesta Kemerdekaan!</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="neo-box p-6 md:p-8 bg-queen-peach/30 dark:bg-queen-purple/10 border-queen-pink space-y-6">
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b-4 border-queen-dark dark:border-queen-pink pb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-queen-pink text-white border-3 border-queen-dark rounded-2xl flex items-center justify-center font-black text-2xl shadow-neo-sm">
+                        🤖
+                    </div>
+                    <div>
+                        <h3 class="heading-bungee text-xl md:text-2xl text-queen-dark dark:text-white">Gemini AI Super Generator Buat <span class="target-name text-queen-pink">AMANDA</span></h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 font-space font-bold">Racikan AI cerdas untuk roaster mantan atau balasan chat pamit super slay!</p>
+                    </div>
+                </div>
+
+                <!-- Generator Mode Selector -->
+                <div class="flex items-center gap-2 bg-white dark:bg-slate-800 p-1.5 rounded-xl border-3 border-queen-dark font-space text-xs font-black">
+                    <button id="mode-roast-btn" onclick="setAiMode('roast')" class="px-3 py-1.5 rounded-lg bg-queen-pink text-white border-2 border-queen-dark">Roast Mantan 🌶️</button>
+                    <button id="mode-reply-btn" onclick="setAiMode('reply')" class="px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-queen-dark dark:text-white">Balasan Chat Slay 💬</button>
+                </div>
+            </div>
+
+            <!-- Controls bar -->
+            <div class="flex flex-wrap items-center justify-between gap-3 font-space text-xs font-bold">
+                <div id="spicy-control-group" class="flex items-center gap-2">
+                    <span class="text-queen-dark dark:text-white font-black">Level Pedas Roasting:</span>
+                    <select id="spicy-level" class="bg-queen-yellow px-3 py-1.5 rounded-xl border-2 border-queen-dark text-queen-dark font-black">
+                        <option value="sedang">Sedang (Pedas Gurih)</option>
+                        <option value="savage" selected>Savage (Bikin Mantan Malu)</option>
+                        <option value="seblak_30">Seblak Level 30 (Sarkas Maksimal)</option>
+                        <option value="pindah_planet">Bikin Mantan Pindah Planet 🚀</option>
+                    </select>
+                </div>
+
+                <div id="reply-control-group" class="hidden flex items-center gap-2">
+                    <span class="text-queen-dark dark:text-white font-black">Tone Balasan Chat:</span>
+                    <select id="reply-tone" class="bg-queen-cyan px-3 py-1.5 rounded-xl border-2 border-queen-dark text-queen-dark font-black">
+                        <option value="Elegant Queen">Elegant Queen (Elegan Berkelas) 👑</option>
+                        <option value="Savage Block">Savage Block (Singkat & Telak) 🚫</option>
+                        <option value="Cold Professional">Cold Professional (Serasa HRD) 💼</option>
+                        <option value="Sarcastic Bestie">Sarcastic Bestie (Ngejek Abis) 💅</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- AI Output Screen -->
+            <div id="ai-roast-screen" class="bg-white dark:bg-slate-800 border-4 border-queen-dark dark:border-queen-pink rounded-2xl p-6 text-center shadow-neo min-h-[160px] flex flex-col items-center justify-center space-y-3 relative">
+                <div id="ai-loading-spinner" class="hidden flex flex-col items-center justify-center space-y-2">
+                    <div class="w-10 h-10 border-4 border-queen-pink border-t-transparent rounded-full animate-spin"></div>
+                    <span class="text-xs font-space font-black text-queen-purple dark:text-queen-cyan">Gemini AI Sedang Meracik Kalimat Sakti... ✨</span>
+                </div>
+
+                <p id="ai-roast-text" class="font-space text-lg md:text-2xl font-extrabold text-queen-dark dark:text-white leading-relaxed">
+                    "Dulu nangisin cowok yang kalo beli bensin cuma mampu Rp 10.000, sekarang Amanda siap beli Matcha Latte tiap hari tanpa mikirin invoice kencan!"
+                </p>
+                <span id="ai-roast-tag" class="text-xs font-space font-black px-3 py-1 bg-queen-yellow text-queen-dark border-2 border-queen-dark rounded-lg">#QueenSlayEx</span>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
+                <button onclick="generateAIResponse()" class="neo-btn bg-queen-pink hover:bg-pink-600 text-white text-base md:text-lg px-8 py-4 rounded-2xl flex items-center gap-2">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <span id="ai-generate-btn-label">GENERATE EJEKAN SAVAGE UNTUK MANTAN!</span>
+                </button>
+                <button onclick="copyCurrentRoast()" class="neo-btn bg-white dark:bg-slate-700 text-queen-dark dark:text-white text-sm px-5 py-4 rounded-2xl flex items-center gap-2">
+                    <i class="fa-solid fa-copy"></i>
+                    <span>Salin Hasil AI</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="neo-box p-6 md:p-8 bg-white dark:bg-slate-900 border-queen-red space-y-6">
+            <div class="flex items-center justify-between border-b-4 border-queen-dark dark:border-queen-pink pb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-queen-red text-white border-3 border-queen-dark rounded-2xl flex items-center justify-center font-black text-2xl shadow-neo-sm">
+                        🩺
+                    </div>
+                    <div>
+                        <h3 class="heading-bungee text-xl md:text-2xl text-queen-dark dark:text-white">Kuis Diagnosa "Tingkat Radioaktif Mantan"</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 font-space font-bold">Uji seberapa parah kadar Red Flag mantan cowok <span class="target-name text-queen-pink">Amanda</span></p>
+                    </div>
+                </div>
+                <span id="quiz-step-badge" class="font-space font-black text-xs px-3 py-1 bg-queen-yellow text-queen-dark rounded-xl border-2 border-queen-dark">
+                    Soal 1 / 4
+                </span>
+            </div>
+
+            <div id="quiz-container" class="space-y-4 font-space">
+                <p id="quiz-question" class="text-base md:text-lg font-black text-queen-dark dark:text-white">
+                    1. Kalau chat telat bales 5 jam, alasan utamanya biasanya apa?
+                </p>
+
+                <div id="quiz-options" class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <!-- Populated dynamically via JS -->
+                </div>
+            </div>
+
+            <div id="quiz-result-box" class="hidden bg-queen-yellow/20 border-4 border-queen-dark dark:border-queen-pink rounded-2xl p-6 text-center space-y-4">
+                <div class="text-xs font-black text-queen-red uppercase tracking-widest">HASIL DIAGNOSA BEBAN MANTAN</div>
+                <div id="quiz-score-display" class="heading-bungee text-4xl text-queen-pink">98% RED FLAG RADIOACTIVE</div>
+                <p id="quiz-analysis" class="font-space font-bold text-sm text-slate-800 dark:text-slate-200">
+                    Mantanmu resmi dikategorikan sebagai limbah sosial berbahaya! Untung kamu langsung kabur sis!
+                </p>
+                <button onclick="resetQuiz()" class="neo-btn bg-queen-purple text-white px-5 py-2 text-xs">Ulangi Kuis</button>
+            </div>
+        </section>
+
+        <section class="neo-box p-6 md:p-8 bg-queen-purple/10 border-queen-purple space-y-6">
+            <div class="flex items-center gap-3 border-b-4 border-queen-dark dark:border-queen-pink pb-4">
+                <div class="w-12 h-12 bg-queen-purple text-white border-3 border-queen-dark rounded-2xl flex items-center justify-center font-black text-2xl shadow-neo-sm">
+                    🔮
+                </div>
+                <div>
+                    <h3 class="heading-bungee text-xl md:text-2xl text-queen-dark dark:text-white">Tarot MoveOn Queen - Ramalan Glow Up</h3>
+                    <p class="text-xs text-slate-600 dark:text-slate-400 font-space font-bold">Klik tiap kartu tarot untuk melihat takdir indah <span class="target-name text-queen-pink">Amanda</span> setelah lepas dari mantan!</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-space">
+                
+                <!-- Tarot Card 1: Karir & Cuan -->
+                <div class="perspective-1000 h-64 cursor-pointer" onclick="flipTarot(this)">
+                    <div class="tarot-card-inner relative w-full h-full duration-500 transform-style-3d">
+                        <!-- Front -->
+                        <div class="absolute inset-0 bg-queen-pink border-4 border-queen-dark rounded-2xl p-5 flex flex-col items-center justify-center text-center text-white backface-hidden shadow-neo">
+                            <span class="text-4xl mb-2">💼</span>
+                            <h4 class="heading-bungee text-lg">TAKDIR CUAN</h4>
+                            <p class="text-xs font-bold mt-2 opacity-90">(Klik untuk Balik Kartu)</p>
+                        </div>
+                        <!-- Back -->
+                        <div class="absolute inset-0 bg-white dark:bg-slate-800 border-4 border-queen-dark rounded-2xl p-5 flex flex-col items-center justify-center text-center backface-hidden rotate-y-180 shadow-neo">
+                            <span class="text-3xl mb-1">📈</span>
+                            <h5 class="font-black text-queen-pink text-sm">Glow Up Karir Max</h5>
+                            <p class="text-xs font-bold text-slate-700 dark:text-slate-300 mt-2">
+                                Tabungan utuh 100%! Gak ada lagi pengeluaran gaib buat jajanin cowok. Siap-siap naik gaji / dapet bonus!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarot Card 2: Jodoh Masa Depan -->
+                <div class="perspective-1000 h-64 cursor-pointer" onclick="flipTarot(this)">
+                    <div class="tarot-card-inner relative w-full h-full duration-500 transform-style-3d">
+                        <!-- Front -->
+                        <div class="absolute inset-0 bg-queen-purple border-4 border-queen-dark rounded-2xl p-5 flex flex-col items-center justify-center text-center text-white backface-hidden shadow-neo">
+                            <span class="text-4xl mb-2">💖</span>
+                            <h4 class="heading-bungee text-lg">TAKDIR JODOH</h4>
+                            <p class="text-xs font-bold mt-2 opacity-90">(Klik untuk Balik Kartu)</p>
+                        </div>
+                        <!-- Back -->
+                        <div class="absolute inset-0 bg-white dark:bg-slate-800 border-4 border-queen-dark rounded-2xl p-5 flex flex-col items-center justify-center text-center backface-hidden rotate-y-180 shadow-neo">
+                            <span class="text-3xl mb-1">🤴</span>
+                            <h5 class="font-black text-queen-purple text-sm">Cowok High Value</h5>
+                            <p class="text-xs font-bold text-slate-700 dark:text-slate-300 mt-2">
+                                Bakal dapet cowok dewasa, rajin bales chat < 2 menit, royal, dan bapaknya gak drama!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarot Card 3: Mood & Skincare -->
+                <div class="perspective-1000 h-64 cursor-pointer" onclick="flipTarot(this)">
+                    <div class="tarot-card-inner relative w-full h-full duration-500 transform-style-3d">
+                        <!-- Front -->
+                        <div class="absolute inset-0 bg-queen-cyan border-4 border-queen-dark rounded-2xl p-5 flex flex-col items-center justify-center text-center text-queen-dark backface-hidden shadow-neo">
+                            <span class="text-4xl mb-2">✨</span>
+                            <h4 class="heading-bungee text-lg">TAKDIR AURA</h4>
+                            <p class="text-xs font-bold mt-2 opacity-90">(Klik untuk Balik Kartu)</p>
+                        </div>
+                        <!-- Back -->
+                        <div class="absolute inset-0 bg-white dark:bg-slate-800 border-4 border-queen-dark rounded-2xl p-5 flex flex-col items-center justify-center text-center backface-hidden rotate-y-180 shadow-neo">
+                            <span class="text-3xl mb-1">🧴</span>
+                            <h5 class="font-black text-queen-cyan text-sm">Glow Skin Clean Face</h5>
+                            <p class="text-xs font-bold text-slate-700 dark:text-slate-300 mt-2">
+                                Jerawat stres hilang 100%! Pipi merona, tidur nyenyak 8 jam tanpa drama overthinking jam 2 pagi.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="neo-box p-6 md:p-8 bg-queen-yellow/30 border-queen-yellow space-y-6">
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b-4 border-queen-dark dark:border-queen-pink pb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-queen-yellow text-queen-dark border-3 border-queen-dark rounded-2xl flex items-center justify-center font-black text-2xl shadow-neo-sm">
+                        🎡
+                    </div>
+                    <div>
+                        <h3 class="heading-bungee text-xl md:text-2xl text-queen-dark dark:text-white">Roda Takdir Glow Up Hari Ini</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 font-space font-bold">Putar roda untuk dapatkan misi khusus Queen buat <span class="target-name text-queen-pink">Amanda</span>!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 font-space">
+                <!-- Wheel Canvas Container -->
+                <div class="relative w-64 h-64 md:w-80 md:h-80 flex-shrink-0">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-3 z-20 text-3xl text-queen-red">
+                        👇
+                    </div>
+                    <canvas id="wheel-canvas" width="320" height="320" class="w-full h-full border-4 border-queen-dark rounded-full shadow-neo bg-white"></canvas>
+                </div>
+
+                <div class="space-y-4 text-center md:text-left max-w-md">
+                    <button onclick="spinWheel()" id="spin-btn" class="neo-btn bg-queen-pink text-white text-base md:text-lg px-8 py-4 rounded-2xl">
+                        🎰 PUTAR RODA GLOW UP!
+                    </button>
+                    <div id="wheel-result-box" class="bg-white dark:bg-slate-800 border-3 border-queen-dark p-4 rounded-xl shadow-neo-sm">
+                        <span class="text-xs font-black text-slate-500 uppercase block">Misi Hari Ini:</span>
+                        <p id="wheel-result-text" class="text-lg font-black text-queen-pink mt-1">
+                            Klik tombol untuk memutar roda!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <section class="neo-box p-6 space-y-5 bg-white dark:bg-slate-900">
+                <div class="flex items-center gap-3 border-b-3 border-slate-200 dark:border-slate-800 pb-3">
+                    <div class="w-11 h-11 bg-queen-yellow border-3 border-queen-dark rounded-xl flex items-center justify-center font-black text-xl shadow-neo-sm">
+                        💄
+                    </div>
+                    <div>
+                        <h3 class="heading-bungee text-xl text-queen-dark dark:text-white">Kalkulator Recovery Cuan</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 font-space font-bold">Estimasi dana terselamatkan pasca putus</p>
+                    </div>
+                </div>
+
+                <div class="space-y-4 font-space text-xs md:text-sm font-bold">
+                    <div>
+                        <div class="flex justify-between items-center mb-1">
+                            <label class="text-slate-700 dark:text-slate-300">Estimasi Uang Terbuang / Bulan:</label>
+                            <span id="calc-expense-val" class="text-queen-purple font-black text-sm">Rp 1.200.000</span>
+                        </div>
+                        <input type="range" id="calc-expense" min="200000" max="8000000" step="100000" value="1200000" oninput="updateBucinLossStats()" 
+                            class="w-full accent-queen-pink cursor-pointer">
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between items-center mb-1">
+                            <label class="text-slate-700 dark:text-slate-300">Durasi Pacaran (Bulan):</label>
+                            <span id="calc-months-val" class="text-queen-pink font-black text-sm">12 Bulan</span>
+                        </div>
+                        <input type="range" id="calc-months" min="1" max="60" value="12" oninput="updateBucinLossStats()" 
+                            class="w-full accent-queen-purple cursor-pointer">
+                    </div>
+
+                    <div class="bg-queen-yellow/20 border-3 border-queen-dark dark:border-queen-pink rounded-2xl p-4 space-y-3 shadow-neo-sm">
+                        <div class="text-xs text-queen-red uppercase tracking-wider font-extrabold flex items-center justify-between">
+                            <span>💸 Total Kerugian Terbebaskan:</span>
+                            <span id="total-money-loss" class="text-base font-black text-queen-dark bg-queen-yellow px-2 py-0.5 rounded border border-queen-dark">Rp 14.400.000</span>
+                        </div>
+                        
+                        <div class="space-y-2 text-xs font-bold text-slate-800 dark:text-slate-200">
+                            <div class="flex justify-between items-center bg-white dark:bg-slate-800 p-2 border border-queen-dark rounded-lg">
+                                <span>🍜 Porsi Seblak Level 5:</span>
+                                <span id="loss-seblak" class="text-queen-purple font-black">960 Porsi</span>
+                            </div>
+                            <div class="flex justify-between items-center bg-white dark:bg-slate-800 p-2 border border-queen-dark rounded-lg">
+                                <span>🧴 Botol Serum Skincare:</span>
+                                <span id="loss-skincare" class="text-queen-pink font-black">72 Botol</span>
+                            </div>
+                            <div class="flex justify-between items-center bg-white dark:bg-slate-800 p-2 border border-queen-dark rounded-lg">
+                                <span>🍵 Matcha Latte Oatmilk:</span>
+                                <span id="loss-matcha" class="text-queen-green font-black">288 Cup</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="neo-box p-6 space-y-4 bg-queen-cyan/10 border-queen-cyan">
+                <div class="flex items-center gap-3 border-b-3 border-slate-200 dark:border-slate-800 pb-3">
+                    <div class="w-11 h-11 bg-queen-cyan text-queen-dark border-3 border-queen-dark rounded-xl flex items-center justify-center font-black text-xl shadow-neo-sm">
+                        🎓
+                    </div>
+                    <div>
+                        <h3 class="heading-bungee text-xl text-queen-dark dark:text-white">Studio Sertifikat Queen</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 font-space font-bold">Download sebagai gambar PNG untuk IG Story / WA!</p>
+                    </div>
+                </div>
+
+                <!-- Canvas Preview -->
+                <div class="flex justify-center">
+                    <canvas id="cert-canvas" width="500" height="320" class="w-full max-w-md border-3 border-queen-dark rounded-xl shadow-neo bg-amber-50"></canvas>
+                </div>
+
+                <div class="flex gap-2">
+                    <button onclick="downloadCertificateImage()" class="w-full neo-btn bg-queen-green text-queen-dark py-3 text-xs flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-download"></i>
+                        <span>Download Gambar Sertifikat PNG</span>
+                    </button>
+                </div>
+            </section>
+
+        </div>
+
+        <section class="neo-box p-6 md:p-8 bg-white dark:bg-slate-900 border-queen-pink space-y-6">
+            <div class="flex items-center justify-between border-b-4 border-queen-dark dark:border-queen-pink pb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-queen-pink text-white border-3 border-queen-dark rounded-2xl flex items-center justify-center font-black text-2xl shadow-neo-sm">
+                        💬
+                    </div>
+                    <div>
+                        <h3 class="heading-bungee text-xl md:text-2xl text-queen-dark dark:text-white">Wall of Bestie Support</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 font-space font-bold">Pesan & semangat dari pasukan bestie se-Indonesia buat <span class="target-name text-queen-pink">Amanda</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="bestie-comments-list" class="space-y-3 font-space text-xs md:text-sm max-h-60 overflow-y-auto pr-2">
+                <!-- Populated via JS -->
+            </div>
+
+            <form onsubmit="addBestieComment(event)" class="flex gap-2 font-space">
+                <input type="text" id="bestie-comment-input" placeholder="Tulis ucapan semangat buat si Queen..." required
+                    class="flex-grow px-4 py-3 bg-slate-50 dark:bg-slate-800 border-3 border-queen-dark dark:border-queen-pink rounded-xl font-bold text-xs md:text-sm">
+                <button type="submit" class="neo-btn bg-queen-yellow text-queen-dark px-5 py-3 text-xs font-black">
+                    Kirim 💌
+                </button>
+            </form>
+        </section>
+
+        <section class="neo-box p-6 md:p-8 bg-queen-yellow p-6 text-center space-y-6">
+            <div class="max-w-md mx-auto space-y-2">
+                <div class="text-6xl animate-bounce">🧻</div>
+                <h3 class="heading-bungee text-2xl md:text-3xl text-queen-dark">Kirim Tisu & Seblak Virtual Buat <span class="target-name">AMANDA</span></h3>
+                <p class="text-xs md:text-sm font-space font-bold text-queen-dark">Satu klik untuk hapus sisa air mata dan bangkitkan aura Queen!</p>
+            </div>
+
+            <div class="flex items-center justify-center gap-4">
+                <button onclick="throwVirtualTissue()" class="neo-btn bg-white hover:bg-slate-100 text-queen-dark text-lg px-8 py-4 rounded-2xl flex items-center gap-3">
+                    <span>🧻 LEMPAR TISU & SEBLAK!</span>
+                </button>
+            </div>
+
+            <div class="inline-block bg-white border-3 border-queen-dark rounded-2xl px-8 py-3 shadow-neo-sm">
+                <span class="text-xs font-space font-black text-slate-500 block uppercase">Total Dukungan Terkumpul:</span>
+                <span id="tissue-counter" class="heading-bungee text-3xl md:text-4xl text-queen-pink">1,248</span>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="mt-16 text-center font-space text-xs font-bold text-slate-600 dark:text-slate-400 space-y-2 pb-8">
+        <p>MOVEON QUEEN 3000™ Ultra Edition • Dibuat khusus untuk membangkitkan harga diri cewek hebat!</p>
+        <p class="text-slate-400 dark:text-slate-500">Ingat Sis: Cowok red flag itu cuma kerikil kecil menuju era Glow Up Max-mu!</p>
+    </footer>
+
+    <script>
+        // Application State
+        let targetData = {
+            name: "Amanda",
+            exType: "Mas-Mas Red Flag Walkin'",
+            duration: 12,
+            reason: "selingkuh",
+            avatar: "👑"
+        };
+
+        let aiCurrentMode = 'roast'; // 'roast' or 'reply'
+        let currentSpicyRoast = "";
+        let tissueCount = 1248;
+        let quizCurrentStep = 0;
+        let quizTotalScore = 0;
+
+        const quizQuestions = [
+            {
+                q: "1. Kalau chat telat bales 5 jam, alasan utamanya biasanya apa?",
+                options: [
+                    { text: "Katanya ketiduran padahal lagi push rank 🎮", score: 25 },
+                    { text: "Lagi boncengan sama cewek lain naik motor 🛵", score: 30 },
+                    { text: "Pura-pura ngambek biar dia gak dicurigai 🤡", score: 20 },
+                    { text: "Bales singkat 'Y' pas jam 2 pagi 📱", score: 25 }
+                ]
+            },
+            {
+                q: "2. Pas diajak nongkrong / jalan kencan, hal apa yang sering terjadi?",
+                options: [
+                    { text: "Dompet ketinggalan / Minta dibayarin 💸", score: 30 },
+                    { text: "Main HP melulu liat Story cewek lain 📲", score: 25 },
+                    { text: "Ngomongin mantan lamanya melulu 🤮", score: 20 },
+                    { text: "Bawa temen-temen jametnya tanpa nanya 👥", score: 25 }
+                ]
+            },
+            {
+                q: "3. Gimana respon dia tiap kamu lagi sedih / butuh cerita?",
+                options: [
+                    { text: "Malah adu nasib ('Aku lebih capek tau!') 🙄", score: 30 },
+                    { text: "Cuma bales 'Oalah wkwk' 💀", score: 25 },
+                    { text: "Di-ghosting berhari-hari 👻", score: 25 },
+                    { text: "Nyalahin kamu overthinking 🤡", score: 20 }
+                ]
+            },
+            {
+                q: "4. Kalimat pangkas hati paling sering dilontarkan mantanmu?",
+                options: [
+                    { text: "'Kamu terlalu baik buat aku...' 🤮", score: 25 },
+                    { text: "'Aku mau fokus karir dulu...' 💼", score: 25 },
+                    { text: "'Dia cuma temen biasa kok!' 📱", score: 30 },
+                    { text: "'Kok kamu makin protektif sih?' 🤐", score: 20 }
+                ]
+            }
+        ];
+
+        const initialBestieComments = [
+            { name: "Clarissa (Bandung)", text: "Good riddance Amanda! Mending duitnya buat beli Matcha Latte tiap hari!" },
+            { name: "Syafa (Jakarta)", text: "Akhirnya sadar juga sis! Welcome to Single Glowing Club! ✨💅" },
+            { name: "Nabila (Surabaya)", text: "Cowok kayak gitu mah rugi skincare doang nangisinnya. Slay Queen!" }
+        ];
+
+        // Web Audio Synthesizer (No external mp3 needed)
+        function playAudioSynth(type) {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                if (type === 'cheer') {
+                    const freqs = [523.25, 659.25, 783.99, 1046.50];
+                    freqs.forEach((f, i) => {
+                        setTimeout(() => {
+                            const osc = ctx.createOscillator();
+                            const gain = ctx.createGain();
+                            osc.type = 'triangle';
+                            osc.frequency.setValueAtTime(f, ctx.currentTime);
+                            gain.gain.setValueAtTime(0.2, ctx.currentTime);
+                            gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.3);
+                            osc.connect(gain);
+                            gain.connect(ctx.destination);
+                            osc.start();
+                            osc.stop(ctx.currentTime + 0.3);
+                        }, i * 100);
+                    });
+                } else if (type === 'cash') {
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(987.77, ctx.currentTime);
+                    osc.frequency.setValueAtTime(1318.51, ctx.currentTime + 0.1);
+                    gain.gain.setValueAtTime(0.3, ctx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.4);
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+                    osc.start();
+                    osc.stop(ctx.currentTime + 0.4);
+                } else if (type === 'alarm') {
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.type = 'sawtooth';
+                    osc.frequency.setValueAtTime(800, ctx.currentTime);
+                    osc.frequency.linearRampToValueAtTime(300, ctx.currentTime + 0.3);
+                    gain.gain.setValueAtTime(0.3, ctx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.3);
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+                    osc.start();
+                    osc.stop(ctx.currentTime + 0.3);
+                }
+            } catch(e) {
+                console.log("Audio Error", e);
+            }
+        }
+
+        function showToast(msg, bg = "bg-queen-pink text-white") {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `px-4 py-3 rounded-xl border-3 border-queen-dark font-space font-black text-xs shadow-neo flex items-center gap-2 transition-all duration-300 transform translate-y-2 opacity-0 ${bg}`;
+            toast.innerHTML = `<span>✨ ${msg}</span>`;
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-2', 'opacity-0');
+            }, 10);
+
+            setTimeout(() => {
+                toast.classList.add('opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            showToast("Mode Tampilan Diperbarui!", "bg-queen-yellow text-queen-dark");
+        }
+
+        function openModal() {
+            document.getElementById('target-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('target-modal').classList.add('hidden');
+        }
+
+        function selectAvatar(emoji, event) {
+            targetData.avatar = emoji;
+            document.querySelectorAll('.avatar-option').forEach(btn => {
+                btn.classList.remove('ring-4', 'ring-queen-pink', 'bg-queen-yellow');
+            });
+            event.currentTarget.classList.add('ring-4', 'ring-queen-pink', 'bg-queen-yellow');
+        }
+
+        function submitTargetSetup(e) {
+            e.preventDefault();
+            const inputName = document.getElementById('modal-name-input').value.trim();
+            if(!inputName) return;
+
+            targetData.name = inputName;
+            targetData.exType = document.getElementById('modal-ex-type-input').value;
+            targetData.duration = parseInt(document.getElementById('modal-duration-input').value);
+            targetData.reason = document.getElementById('modal-reason-input').value;
+
+            document.getElementById('header-target-name').innerText = targetData.name.toUpperCase();
+            document.getElementById('hero-target-name').innerText = targetData.name.toUpperCase();
+            document.getElementById('hero-body-target').innerText = targetData.name;
+            document.getElementById('target-avatar-badge').innerText = targetData.avatar;
+
+            document.querySelectorAll('.target-name').forEach(el => {
+                el.innerText = targetData.name.toUpperCase();
+            });
+
+            document.getElementById('calc-months').value = targetData.duration;
+            updateBucinLossStats();
+            drawCertificateCanvas();
+
+            closeModal();
+            popConfettiParty();
+            playAudioSynth('cheer');
+            showToast(`Target diperbarui untuk Queen ${targetData.name}! 🎉`);
+        }
+
+        function setAiMode(mode) {
+            aiCurrentMode = mode;
+            const roastBtn = document.getElementById('mode-roast-btn');
+            const replyBtn = document.getElementById('mode-reply-btn');
+            const spicyGroup = document.getElementById('spicy-control-group');
+            const replyGroup = document.getElementById('reply-control-group');
+            const btnLabel = document.getElementById('ai-generate-btn-label');
+
+            if (mode === 'roast') {
+                roastBtn.className = "px-3 py-1.5 rounded-lg bg-queen-pink text-white border-2 border-queen-dark";
+                replyBtn.className = "px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-queen-dark dark:text-white";
+                spicyGroup.classList.remove('hidden');
+                replyGroup.classList.add('hidden');
+                btnLabel.innerText = "GENERATE EJEKAN SAVAGE UNTUK MANTAN!";
+            } else {
+                replyBtn.className = "px-3 py-1.5 rounded-lg bg-queen-pink text-white border-2 border-queen-dark";
+                roastBtn.className = "px-3 py-1.5 rounded-lg bg-slate-100 dark:bg-slate-700 text-queen-dark dark:text-white";
+                replyGroup.classList.remove('hidden');
+                spicyGroup.classList.add('hidden');
+                btnLabel.innerText = "GENERATE BALASAN CHAT PAMIT SLAY!";
+            }
+        }
+
+        async function generateAIResponse() {
+            const spinner = document.getElementById('ai-loading-spinner');
+            const roastText = document.getElementById('ai-roast-text');
+            const roastTag = document.getElementById('ai-roast-tag');
+
+            spinner.classList.remove('hidden');
+            roastText.classList.add('hidden');
+
+            let promptText = "";
+            if (aiCurrentMode === 'roast') {
+                const spicyLevel = document.getElementById('spicy-level').value;
+                promptText = `Buatkan 1 kalimat roasting pedas, kocak, dan empowering untuk cewek bernama "${targetData.name}" yang baru putus dari mantan bertipe "${targetData.exType}" pacaran ${targetData.duration} bulan karena "${targetData.reason}". Level kepedasan: ${spicyLevel}. Gunakan bahasa gaul cewek Indonesia (vibe Slay/Queen).`;
+            } else {
+                const tone = document.getElementById('reply-tone').value;
+                promptText = `Buatkan 1 template kalimat balasan chat pamit / pesan putus terakhir yang super slay dengan tone "${tone}" dari cewek bernama "${targetData.name}" untuk mantannya yang bertipe "${targetData.exType}". Bikin si cewek keliatan berkelas, tegas, dan gak bisa dikontak lagi!`;
+            }
+
+            try {
+                const apiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        contents: [{ parts: [{ text: promptText }] }],
+                        systemInstruction: {
+                            parts: [{ text: "Kamu adalah Bestie sejati cewek Indonesia yang pandai meracik kalimat roasting dan balasan chat yang percaya diri, lucu, dan empowering." }]
+                        }
+                    })
+                });
+
+                const data = await response.json();
+                const resultText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+
+                if (resultText) {
+                    currentSpicyRoast = resultText.trim();
+                    roastText.innerText = `"${currentSpicyRoast}"`;
+                    roastTag.innerText = aiCurrentMode === 'roast' ? '#RoastMantanRedFlag' : '#BalasanChatSlay';
+                } else {
+                    fallbackRoast();
+                }
+            } catch(err) {
+                fallbackRoast();
+            } finally {
+                spinner.classList.add('hidden');
+                roastText.classList.remove('hidden');
+                playAudioSynth('cheer');
+            }
+        }
+
+        function fallbackRoast() {
+            currentSpicyRoast = `Congrats ${targetData.name}! Dulu nangisin cowok yang helm bogonya lecet, sekarang saatnya kamu Glow Up tanpa beban! ✨💅`;
+            document.getElementById('ai-roast-text').innerText = `"${currentSpicyRoast}"`;
+        }
+
+        function speakCurrentRoast() {
+            if ('speechSynthesis' in window) {
+                const utterance = new SpeechSynthesisUtterance(currentSpicyRoast || "Selamat jomblo Queen!");
+                utterance.lang = 'id-ID';
+                utterance.pitch = 1.2;
+                utterance.rate = 1;
+                window.speechSynthesis.speak(utterance);
+            } else {
+                showToast("Fitur Suara tidak didukung browser ini.", "bg-queen-red text-white");
+            }
+        }
+
+        function copyCurrentRoast() {
+            navigator.clipboard.writeText(currentSpicyRoast).then(() => {
+                showToast("Kalimat disalin ke clipboard!");
+            });
+        }
+
+        function renderQuizStep() {
+            const q = quizQuestions[quizCurrentStep];
+            document.getElementById('quiz-question').innerText = q.q;
+            document.getElementById('quiz-step-badge').innerText = `Soal ${quizCurrentStep + 1} / ${quizQuestions.length}`;
+
+            const optionsBox = document.getElementById('quiz-options');
+            optionsBox.innerHTML = q.options.map(opt => `
+                <button onclick="answerQuiz(${opt.score})" class="neo-btn bg-white dark:bg-slate-800 text-queen-dark dark:text-white hover:bg-queen-yellow p-4 text-xs font-black text-left leading-snug">
+                    ${opt.text}
+                </button>
+            `).join('');
+        }
+
+        function answerQuiz(score) {
+            quizTotalScore += score;
+            quizCurrentStep++;
+
+            if (quizCurrentStep < quizQuestions.length) {
+                renderQuizStep();
+            } else {
+                document.getElementById('quiz-container').classList.add('hidden');
+                const resultBox = document.getElementById('quiz-result-box');
+                resultBox.classList.remove('hidden');
+                document.getElementById('quiz-score-display').innerText = `${quizTotalScore}% RED FLAG RADIOACTIVE`;
+                playAudioSynth('alarm');
+            }
+        }
+
+        function resetQuiz() {
+            quizCurrentStep = 0;
+            quizTotalScore = 0;
+            document.getElementById('quiz-container').classList.remove('hidden');
+            document.getElementById('quiz-result-box').classList.add('hidden');
+            renderQuizStep();
+        }
+
+        function flipTarot(el) {
+            const inner = el.querySelector('.tarot-card-inner');
+            inner.classList.toggle('rotate-y-180');
+            playAudioSynth('cheer');
+        }
+
+        function drawCertificateCanvas() {
+            const canvas = document.getElementById('cert-canvas');
+            const ctx = canvas.getContext('2d');
+
+            // Background
+            ctx.fillStyle = '#FFFDF0';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Outer Neo Border
+            ctx.strokeStyle = '#12121C';
+            ctx.lineWidth = 8;
+            ctx.strokeRect(10, 10, canvas.width - 20, canvas.height - 20);
+
+            // Title Header
+            ctx.fillStyle = '#FF2A85';
+            ctx.font = '900 18px "Space Grotesk", sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('🎓 SERTIFIKAT QUEEN INDEPENDENT 🎓', canvas.width / 2, 45);
+
+            ctx.fillStyle = '#12121C';
+            ctx.font = 'bold 12px "Plus Jakarta Sans", sans-serif';
+            ctx.fillText('Diberikan secara terhormat kepada:', canvas.width / 2, 80);
+
+            // Name
+            ctx.fillStyle = '#9D4EDD';
+            ctx.font = '900 28px "Space Grotesk", sans-serif';
+            ctx.fillText(`${targetData.name.toUpperCase()} S.Glow`, canvas.width / 2, 125);
+
+            // Body
+            ctx.fillStyle = '#12121C';
+            ctx.font = 'bold 13px "Plus Jakarta Sans", sans-serif';
+            ctx.fillText('Dinyatakan RESMI BEBAS dari cowok red flag & beban!', canvas.width / 2, 165);
+            ctx.fillText('Berhak mendapatkan gelar kebebasan selamanya!', canvas.width / 2, 185);
+
+            // Badge Box
+            ctx.fillStyle = '#FFE600';
+            ctx.fillRect(80, 215, canvas.width - 160, 40);
+            ctx.strokeStyle = '#12121C';
+            ctx.lineWidth = 3;
+            ctx.strokeRect(80, 215, canvas.width - 160, 40);
+
+            ctx.fillStyle = '#12121C';
+            ctx.font = '900 14px "Space Grotesk", sans-serif';
+            ctx.fillText('👑 QUEEN GLOWING & SINGLE MAX 👑', canvas.width / 2, 240);
+
+            // Stamp
+            ctx.fillStyle = '#FF2A85';
+            ctx.font = 'bold 10px sans-serif';
+            ctx.fillText('Sah disetujui Pasukan Bestie Indonesia', canvas.width / 2, 290);
+        }
+
+        function downloadCertificateImage() {
+            const canvas = document.getElementById('cert-canvas');
+            const link = document.createElement('a');
+            link.download = `Sertifikat_Queen_${targetData.name}.png`;
+            link.href = canvas.toDataURL();
+            link.click();
+            showToast("Gambar Sertifikat berhasil di-download!");
+        }
+
+        const wheelItems = [
+            "Beli Matcha Latte 🍵",
+            "Unfollow IG Mantan 🚫",
+            "Hair Spa & Me Time 💆‍♀️",
+            "Checkout Skincare 🧴",
+            "Nonton Bioskop Bestie 🍿",
+            "Tidur Nyenyak 8 Jam 😴"
+        ];
+
+        function drawWheel() {
+            const canvas = document.getElementById('wheel-canvas');
+            const ctx = canvas.getContext('2d');
+            const numSegments = wheelItems.length;
+            const anglePerSeg = (2 * Math.PI) / numSegments;
+            const colors = ['#FF2A85', '#FFE600', '#9D4EDD', '#00F0FF', '#00E676', '#FF99C8'];
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < numSegments; i++) {
+                ctx.beginPath();
+                ctx.fillStyle = colors[i];
+                ctx.moveTo(160, 160);
+                ctx.arc(160, 160, 150, i * anglePerSeg, (i + 1) * anglePerSeg);
+                ctx.fill();
+                ctx.stroke();
+
+                ctx.save();
+                ctx.translate(160, 160);
+                ctx.rotate(i * anglePerSeg + anglePerSeg / 2);
+                ctx.textAlign = 'right';
+                ctx.fillStyle = '#12121C';
+                ctx.font = 'bold 12px "Space Grotesk", sans-serif';
+                ctx.fillText(wheelItems[i], 140, 5);
+                ctx.restore();
+            }
+        }
+
+        let isSpinning = false;
+        function spinWheel() {
+            if (isSpinning) return;
+            isSpinning = true;
+
+            const selectedIdx = Math.floor(Math.random() * wheelItems.length);
+            const textResult = wheelItems[selectedIdx];
+
+            let count = 0;
+            const interval = setInterval(() => {
+                count++;
+                playAudioSynth('cash');
+                if (count >= 15) {
+                    clearInterval(interval);
+                    isSpinning = false;
+                    document.getElementById('wheel-result-text').innerText = textResult;
+                    popConfettiParty();
+                    showToast(`Misi Queen Hari Ini: ${textResult}`);
+                }
+            }, 100);
+        }
+
+        function updateBucinLossStats() {
+            const monthly = parseInt(document.getElementById('calc-expense').value);
+            const months = parseInt(document.getElementById('calc-months').value);
+
+            document.getElementById('calc-expense-val').innerText = `Rp ${monthly.toLocaleString('id-ID')}`;
+            document.getElementById('calc-months-val').innerText = `${months} Bulan`;
+
+            const totalMoney = monthly * months;
+            const seblakPortions = Math.floor(totalMoney / 15000);
+            const skincareBottles = Math.floor(totalMoney / 200000);
+            const matchaCups = Math.floor(totalMoney / 50000);
+
+            document.getElementById('total-money-loss').innerText = `Rp ${totalMoney.toLocaleString('id-ID')}`;
+            document.getElementById('loss-seblak').innerText = `${seblakPortions.toLocaleString('id-ID')} Porsi`;
+            document.getElementById('loss-skincare').innerText = `${skincareBottles.toLocaleString('id-ID')} Botol`;
+            document.getElementById('loss-matcha').innerText = `${matchaCups.toLocaleString('id-ID')} Cup`;
+        }
+
+        function renderBestieComments() {
+            const container = document.getElementById('bestie-comments-list');
+            container.innerHTML = initialBestieComments.map(c => `
+                <div class="bg-slate-50 dark:bg-slate-800 border-2 border-queen-dark dark:border-queen-pink p-3 rounded-xl flex items-start gap-2">
+                    <span class="text-xl">💅</span>
+                    <div>
+                        <strong class="text-queen-pink block text-xs">${c.name}</strong>
+                        <p class="text-slate-700 dark:text-slate-300 font-bold text-xs">${c.text}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function addBestieComment(e) {
+            e.preventDefault();
+            const input = document.getElementById('bestie-comment-input');
+            const val = input.value.trim();
+            if (!val) return;
+
+            initialBestieComments.unshift({ name: "Kamu (Bestie Sejati)", text: val });
+            input.value = "";
+            renderBestieComments();
+            showToast("Pesan semangat berhasil dikirim!");
+        }
+
+        function throwVirtualTissue() {
+            tissueCount++;
+            document.getElementById('tissue-counter').innerText = tissueCount.toLocaleString('id-ID');
+
+            // Animated floating emoji
+            const emoji = document.createElement('div');
+            emoji.className = 'floating-emoji text-4xl';
+            emoji.innerText = ['🧻', '🍲', '👑', '✨'][Math.floor(Math.random() * 4)];
+            emoji.style.left = `${Math.random() * 80 + 10}%`;
+            emoji.style.top = '70%';
+            document.body.appendChild(emoji);
+
+            setTimeout(() => emoji.remove(), 2000);
+
+            popConfettiParty();
+            playAudioSynth('cheer');
+        }
+
+        function popConfettiParty() {
+            if (typeof confetti === 'function') {
+                confetti({
+                    particleCount: 100,
+                    spread: 90,
+                    origin: { y: 0.6 },
+                    colors: ['#FF2A85', '#9D4EDD', '#FFE600', '#00F0FF']
+                });
+            }
+        }
+
+        window.onload = function() {
+            renderQuizStep();
+            drawCertificateCanvas();
+            drawWheel();
+            updateBucinLossStats();
+            renderBestieComments();
+            openModal();
+        };
+    </script>
+</body>
+</html>
